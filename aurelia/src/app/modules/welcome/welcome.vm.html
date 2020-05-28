@@ -1,0 +1,87 @@
+<template>
+  <div class="container-fluid au-animate">
+    <h1 t="TITLE"></h1>
+    <h2>${heading}</h2>
+    <form role="form" submit.delegate="submit()" >
+
+      <div validation-errors.bind="errors">
+      <div class="form-group">
+        <label for="fn">First Name</label>
+        <input type="text" value.bind="firstName & validate" class="form-control" id="fn" placeholder="first name">
+      </div>
+      <div class="form-group">
+        <label for="ln">Last Name</label>
+        <input type="text" value.bind="lastName & validate" class="form-control" id="ln" placeholder="last name">
+      </div>
+      <div class="form-group">
+        <label for="ad">Address</label>
+        <input type="text" value.bind="address & validate" class="form-control" id="ad" placeholder="address">
+      </div>
+      <div class="form-group">
+        <label for="em">Email</label>
+        <input type="text" value.bind="email & validate" class="form-control" id="em" placeholder="last name">
+      </div>
+      <div class="form-group">
+        <label for="age">Age 20-60</label>
+        <input type="text" value.bind="age & validate" class="form-control" id="age" placeholder="age">
+      </div>
+      <div class="form-group">
+        <label for="hired">Hired 1/0</label>
+        <input type="text" value.bind="hired & validate" class="form-control" id="hired" placeholder="hired">
+      </div>
+      <div class="form-group">
+        <label for="country">CountryOfOrigin</label>
+        <input type="text" value.bind="country & validate" class="form-control" id="country" placeholder="country">
+      </div>
+
+
+
+      <ul if.bind="validationController.errors">
+        <li repeat.for="error of validationController.errors">
+            ${error.message}
+        </li>
+    </ul>
+    </div>
+
+
+
+
+      <div class="form-group">
+        <label>Full Name</label>
+        <p class="help-block">${fullName | upper}</p>
+      </div>
+      <button click.delegate="SubmitApplicant()" type="submit" class="btn btn-primary">SEND</button>
+
+      <button click.delegate="SubmitReset()" type="submit" class="btn btn-primary">RESET</button>
+    </form>
+
+    <show-name some-text.bind="firstName"></show-name>
+<!--
+    <h3>Custom global attribute</h3>
+    <div red-square></div>
+
+    <h3>Global value converter</h3>
+    <p>${currentDate | dateFormat & signal:'locale:changed'}</p>
+  -->
+    <h3>Switch Language</h3>
+    <button click.delegate="switchLanguage()" class="btn btn-primary">Click me!</button>
+    <br/><br/>
+    <!--
+    <p>Everything is: <span t="TR_ATTR"></span></p>
+    <p>Signalr example: ${ 'TR_SIGNALER' | t & signal:'locale:changed' }</p>
+
+    <h3>Converter utility</h3>
+    <p>${ jsonProperty | json }</p>
+    <p>Available converters are: filter, json, limit, md5 and sort</p>
+
+    <h3>Validation</h3>
+    <p>Validation is: ${validationValid}</p>
+    <button class="btn btn-primary" click.delegate="validateFirstName()">validate</button>
+
+    <h3>Dialog</h3>
+    <button click.delegate="openDialog()" class="btn btn-primary">open dialog</button>
+
+    <h3>Generic Dialog</h3>
+    <button click.delegate="openGenericDialog()" class="btn btn-primary">open generic dialog</button>-->
+  </div>
+</template>

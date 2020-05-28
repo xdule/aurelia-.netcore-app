@@ -1,0 +1,28 @@
+<template>
+  <ux-dialog>
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <ux-dialog-header>
+          <div class="modal-header">
+            <h5 class="modal-title" t.bind="title"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" click.delegate="controller.close()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </ux-dialog-header>
+        <ux-dialog-body>
+          <div class="modal-body">
+            <compose view-model.ref="composeElement" view-model.bind="contentView" model.bind="contentModel"></compose>
+          </div>
+        </ux-dialog-body>
+        <ux-dialog-footer>
+          <div class="modal-footer">
+            <button repeat.for="button of buttons" click.delegate="execute(button)" class="btn ${button.classes}" disabled.bind="!button.isEnabled"
+              t.bind="button.title">
+            </button>
+          </div>
+        </ux-dialog-footer>
+      </div>
+    </div>
+  </ux-dialog>
+</template>

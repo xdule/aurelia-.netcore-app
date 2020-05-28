@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+/**
+ * Third-pary libraries and fonts
+ */
+@import '../../node_modules/normalize.css/normalize.css';
+
+@import 'variables';
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../../node_modules/animate.css/animate.css';
+
+/**
+ * Base styles
+ */
+@import 'base';
+@import 'aurelia';
+@import 'dialog';

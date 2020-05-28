@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= htmlWebpackPlugin.options.metadata.title %>
+  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="description" content="<%= htmlWebpackPlugin.options.metadata.description %>">
+  <meta name="version" content="<%= htmlWebpackPlugin.options.metadata.version %>">
+  <meta name="author" content="<%= htmlWebpackPlugin.options.metadata.author %>">
+
+  <% if (htmlWebpackPlugin.options.platform === 'browser') { %>
+    <base href="<%= htmlWebpackPlugin.options.metadata.baseUrl %>">
+  <% } %>
+</head>
+
+<body>
+  <div aurelia-app="main">
+    <div class="row mt-5 justify-content-md-center">
+      <div class="col-xs-4 text-center">
+        <h1><%- htmlWebpackPlugin.options.metadata.title %></h1>
+        <h3>Loading...</h3>
+      </div>
+    </div>
+  </div>
+
+  <% if (htmlWebpackPlugin.options.metadata.platform === 'mobile') { %>
+    <!-- Cordova -->
+    <script src="cordova.js"></script>
+  <% } %>
+
+  <% if (htmlWebpackPlugin.options.metadata.server) { %>
+    <!-- Webpack Dev Server reload -->
+    <script src="/webpack-dev-server.js"></script>
+    <% } %>
+</body>
+
+</html>
