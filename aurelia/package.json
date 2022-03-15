@@ -166,7 +166,7 @@
     "i18next-browser-languagedetector": "^2.0.0",
     "isomorphic-fetch": "^2.2.1",
     "jquery": "^3.2.1",
-    "lodash-es": "^4.17.7",
+    "lodash-es": "^4.17.21",
     "moment": "^2.18.1",
     "normalize.css": "^8.0.0",
     "popper.js": "^1.12.9",
